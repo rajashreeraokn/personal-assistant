@@ -29,14 +29,16 @@ API Resources and Actions:
 
 ## Cheque 
    /account/{accountId}/Cheque
->   {
->    chequeNumber:"Unique id of the cheque"
->    bank:"name of bank",
->    to:"Recipient",
->    date: cheque date,
->    purpose: "reason to give the cheque"
->    status: Active/Cancelled
->   }
+   ```
+   {
+    chequeNumber:"Unique id of the cheque"
+    bank:"name of bank",
+    to:"Recipient",
+    date: cheque date,
+    purpose: "reason to give the cheque"
+    status: Active/Cancelled
+   }
+   ```
    #### POST account/{accountId}/Cheque
    #### GET account/{accountId}/Cheque/{chequeNumber}
    #### GET account/{accountId}/Cheque?month=11
@@ -44,14 +46,18 @@ API Resources and Actions:
  
 ## ChequeStatus
    /account/{accountId}/Cheque/chequeNumber/ChequeStatus
->    {
->    chequeNumber: "number of cheque",
->    status: 
->    }
+   ```
+    {
+    chequeNumber: "number of cheque",
+    status: 
+    }
+```
    #### POST (no deletes, no PUTS), Immutable
    #### GET 
 ## Account
->   {
->      accountId:
->      accountName:
->   }
+```
+   {
+      accountId:
+      accountName:
+   }
+```

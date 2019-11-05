@@ -27,7 +27,7 @@ API Resources and Actions:
 * GET: /accountname/date          -> to get minimum balance to be maintained for a date 
 
 
-* Cheque /Cheque
+* Cheque account/{accountId}/Cheque
    {
     chequeNumber:"Unique id of the cheque"
     bank:"name of bank",
@@ -36,15 +36,21 @@ API Resources and Actions:
     purpose: "reason to give the cheque"
     status: Active/Cancelled
    }
- ** POST /Cheque
- ** GET /Cheque/{chequeNumber}
- ** GET /Cheque?month=11
- ** DELETE /Cheque/{chequeNumber}
+ ** POST account/{accountId}/Cheque
+ ** GET account/{accountId}/Cheque/{chequeNumber}
+ ** GET account/{accountId}/Cheque?month=11
+ ** DELETE account/{accountId}/Cheque/{chequeNumber}
  
- * ChequeStatus /Cheque/chequeNumber/ChequeStatus
+ * ChequeStatus account/{accountId}/Cheque/chequeNumber/ChequeStatus
     {
     chequeNumber: "number of cheque",
     status: 
     }
  ** POST (no deletes, no PUTS), Immutable
  ** GET 
+
+* Account
+   {
+      accountId:
+      accountName:
+   }

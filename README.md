@@ -18,3 +18,10 @@ User stories:
 * As a user I want to delete the cheques
 * As a user I want to mark a cheque as cancelled
 * As a user I want to get the minimum balance to be maintained for a date
+
+API Resources and Actions:
+* POST: /accountname              -> to add cheques issued details of cheque 
+* GET : /accountname/month        -> to search details of check issued in that month 
+* POST: /accountname/chequeid     -> to edit cheques and correct cheque number or date or mark it as cancelled 
+* DELETE: /accountname/chequeid   -> to delete cheques
+* GET: /accountname/date          -> to get minimum balance to be maintained for a date 

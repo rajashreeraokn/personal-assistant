@@ -27,7 +27,8 @@ API Resources and Actions:
 * GET: /accountname/date          -> to get minimum balance to be maintained for a date 
 
 
-## Cheque account/{accountId}/Cheque
+## Cheque 
+   /account/{accountId}/Cheque
 >   {
 >    chequeNumber:"Unique id of the cheque"
 >    bank:"name of bank",
@@ -41,7 +42,8 @@ API Resources and Actions:
    ### GET account/{accountId}/Cheque?month=11
    ### DELETE account/{accountId}/Cheque/{chequeNumber}
  
-## ChequeStatus account/{accountId}/Cheque/chequeNumber/ChequeStatus
+## ChequeStatus
+   /account/{accountId}/Cheque/chequeNumber/ChequeStatus
 >    {
 >    chequeNumber: "number of cheque",
 >    status: 

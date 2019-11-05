@@ -47,8 +47,9 @@ API Resources and Actions:
    /account/{accountId}/Cheque/chequeNumber/ChequeStatus
    ```
     {
-    chequeNumber: "number of cheque",
-    status: 
+    date: "'
+    status: ""
+    reason:""
     }
 ```
    ##### POST (no deletes, no PUTS), Immutable

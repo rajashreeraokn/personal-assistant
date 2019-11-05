@@ -39,10 +39,10 @@ API Resources and Actions:
     status: Active/Cancelled
    }
    ```
-   #### POST account/{accountId}/Cheque
-   #### GET account/{accountId}/Cheque/{chequeNumber}
-   #### GET account/{accountId}/Cheque?month=11
-   #### DELETE account/{accountId}/Cheque/{chequeNumber}
+   ##### POST account/{accountId}/Cheque
+   ##### GET account/{accountId}/Cheque/{chequeNumber}
+   ##### GET account/{accountId}/Cheque?month=11
+   ##### DELETE account/{accountId}/Cheque/{chequeNumber}
  
 ## ChequeStatus
    /account/{accountId}/Cheque/chequeNumber/ChequeStatus
@@ -52,8 +52,8 @@ API Resources and Actions:
     status: 
     }
 ```
-   #### POST (no deletes, no PUTS), Immutable
-   #### GET 
+   ##### POST (no deletes, no PUTS), Immutable
+   ##### GET 
 ## Account
 ```
    {

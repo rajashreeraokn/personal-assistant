@@ -25,3 +25,26 @@ API Resources and Actions:
 * POST: /accountname/chequeid     -> to edit cheques and correct cheque number or date or mark it as cancelled 
 * DELETE: /accountname/chequeid   -> to delete cheques
 * GET: /accountname/date          -> to get minimum balance to be maintained for a date 
+
+
+* Cheque /Cheque
+   {
+    chequeNumber:"Unique id of the cheque"
+    bank:"name of bank",
+    to:"Recipient",
+    date: cheque date,
+    purpose: "reason to give the cheque"
+    status: Active/Cancelled
+   }
+ ** POST /Cheque
+ ** GET /Cheque/{chequeNumber}
+ ** GET /Cheque?month=11
+ ** DELETE /Cheque/{chequeNumber}
+ 
+ * ChequeStatus /Cheque/chequeNumber/ChequeStatus
+    {
+    chequeNumber: "number of cheque",
+    status: 
+    }
+ ** POST (no deletes, no PUTS), Immutable
+ ** GET 

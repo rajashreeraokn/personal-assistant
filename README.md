@@ -37,10 +37,10 @@ API Resources and Actions:
 >    purpose: "reason to give the cheque"
 >    status: Active/Cancelled
 >   }
-   ### POST account/{accountId}/Cheque
-   ### GET account/{accountId}/Cheque/{chequeNumber}
-   ### GET account/{accountId}/Cheque?month=11
-   ### DELETE account/{accountId}/Cheque/{chequeNumber}
+   #### POST account/{accountId}/Cheque
+   #### GET account/{accountId}/Cheque/{chequeNumber}
+   #### GET account/{accountId}/Cheque?month=11
+   #### DELETE account/{accountId}/Cheque/{chequeNumber}
  
 ## ChequeStatus
    /account/{accountId}/Cheque/chequeNumber/ChequeStatus
@@ -48,8 +48,8 @@ API Resources and Actions:
 >    chequeNumber: "number of cheque",
 >    status: 
 >    }
-   ### POST (no deletes, no PUTS), Immutable
-   ### GET 
+   #### POST (no deletes, no PUTS), Immutable
+   #### GET 
 ## Account
 >   {
 >      accountId:

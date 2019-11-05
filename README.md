@@ -36,7 +36,6 @@ API Resources and Actions:
     to:"Recipient",
     date: cheque date,
     purpose: "reason to give the cheque"
-    status: Active/Cancelled
    }
    ```
    ##### POST account/{accountId}/Cheque

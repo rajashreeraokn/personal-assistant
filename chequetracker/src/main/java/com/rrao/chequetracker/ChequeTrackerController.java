@@ -17,7 +17,7 @@ public class ChequeTrackerController {
 
   @PostMapping("/account/{accountId}/Cheque")
   public String addNewCheque(@RequestBody Cheque cheque, @PathVariable String accountId){
-    chequeTrackerService.addCheque(cheque);
+    chequeTrackerService.addCheque(new Cheque(cheque.getChequeNumber(),cheque.getBankName(),cheque.getRecipient(),cheque.getPurpose(),cheque.getDate()));
     return "cheque created";
   }
 

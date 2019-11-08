@@ -2,6 +2,7 @@ package com.rrao.chequetracker;
 
 
 import java.time.LocalDate;
+import javax.persistence.Entity;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

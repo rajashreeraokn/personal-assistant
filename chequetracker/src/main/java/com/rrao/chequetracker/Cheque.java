@@ -2,7 +2,13 @@ package com.rrao.chequetracker;
 
 
 import java.time.LocalDate;
+import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.stereotype.Component;
 
+@NoArgsConstructor
+@EnableAutoConfiguration
 public class Cheque {
 
   private static String chequeNumber;
@@ -19,6 +25,7 @@ public class Cheque {
     setPurpose(purpose);
     setDate(date);
   }
+
 
   public static String getChequeNumber() {
     return chequeNumber;

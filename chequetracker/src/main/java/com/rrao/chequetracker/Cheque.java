@@ -9,17 +9,17 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Component;
 
 @NoArgsConstructor
-@EnableAutoConfiguration
 public class Cheque {
 
-  private static String chequeNumber;
-  private static String bankName;
-  private static String recipient;
-  private static String purpose;
-  private static LocalDate date;
+  private String chequeNumber;
+  private String bankName;
+  private String recipient;
+  private String purpose;
+  private LocalDate date;
 
 
-  public Cheque(String chequeNumber, String bankName, String recipient, String purpose,LocalDate date ) {
+  public Cheque(String chequeNumber, String bankName, String recipient, String purpose,
+      LocalDate date) {
     setChequeNumber(chequeNumber);
     setBankName(bankName);
     setRecipient(recipient);
@@ -28,43 +28,43 @@ public class Cheque {
   }
 
 
-  public static String getChequeNumber() {
+  public String getChequeNumber() {
     return chequeNumber;
   }
 
-  public static void setChequeNumber(String chequeNumber) {
-    Cheque.chequeNumber = chequeNumber;
+  public void setChequeNumber(String chequeNumber) {
+    this.chequeNumber = chequeNumber;
   }
 
-  public static String getBankName() {
+  public String getBankName() {
     return bankName;
   }
 
-  public static String getRecipient() {
+  public void setBankName(String bankName) {
+    this.bankName = bankName;
+  }
+
+  public String getRecipient() {
     return recipient;
   }
 
-  public static void setBankName(String bankName) {
-    Cheque.bankName = bankName;
+  public void setRecipient(String recipient) {
+    this.recipient = recipient;
   }
 
-  public static void setRecipient(String recipient) {
-    Cheque.recipient = recipient;
-  }
-
-  public static void setPurpose(String purpose) {
-    Cheque.purpose = purpose;
-  }
-
-  public static String getPurpose() {
+  public String getPurpose() {
     return purpose;
   }
 
-  public static LocalDate getDate() {
+  public void setPurpose(String purpose) {
+    this.purpose = purpose;
+  }
+
+  public LocalDate getDate() {
     return date;
   }
 
-  public static void setDate(LocalDate date) {
-    Cheque.date = date;
+  public void setDate(LocalDate date) {
+    this.date = date;
   }
 }

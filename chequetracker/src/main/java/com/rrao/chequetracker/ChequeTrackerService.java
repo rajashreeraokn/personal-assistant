@@ -1,39 +1,26 @@
 package com.rrao.chequetracker;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ChequeTrackerService {
 
-  private List<Cheque> chequeList = new ArrayList();
+  private Map<String, Cheque> chequeMap = new HashMap();
 
   public void addCheque(Cheque c) {
-    chequeList.add(c);
+    chequeMap.put(c.getChequeNumber(), c);
   }
 
-  public List<Cheque> getChequeList() {
-    return this.chequeList;
+  public Map<String, Cheque> getChequeMap() {
+    return this.chequeMap;
   }
 
-  public Boolean updateChequeDetails(String chequeNumber, Cheque cheque) {
-    int i = getChequeIndex(chequeNumber);
-    if (i < 0) {
-      return false;
-    }
-    chequeList.set(i, cheque);
+  public void updateChequeDetails(String chequeNumber, Cheque cheque) {
+    chequeMap.put(chequeNumber, cheque);
 
-return true;
   }
 
-  private int getChequeIndex(String chequeNumber) {
-    int i = 0;
-    while (i < chequeList.size()) {
-      if (chequeList.get(i).getChequeNumber().equals(chequeNumber)) {
-        return i;
-      }
-    }
-    return -1;
-  }
 }

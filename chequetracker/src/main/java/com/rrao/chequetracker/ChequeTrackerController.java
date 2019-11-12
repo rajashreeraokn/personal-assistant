@@ -1,6 +1,7 @@
 package com.rrao.chequetracker;
 
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,21 +23,20 @@ public class ChequeTrackerController {
   }
 
   @GetMapping("/account/{accountId}/Cheque")
-  public List<Cheque> getChequeDetails(@PathVariable String accountId) {
-    return chequeTrackerService.getChequeList();
+  public Map<String, Cheque> getChequeDetails(@PathVariable String accountId) {
+    return chequeTrackerService.getChequeMap();
   }
 
   @GetMapping("/account/{accountId}/Cheque/{chequeNumber}")
-  public List<Cheque> getChequeDetails(@PathVariable String chequeNumber,
+  public Cheque getChequeDetails(@PathVariable String chequeNumber,
       @PathVariable String accountId) {
-    return chequeTrackerService.getChequeList().stream()
-        .filter(x -> x.getChequeNumber().equals(chequeNumber)).collect(Collectors.toList());
+    return chequeTrackerService.getChequeMap().get(chequeNumber);
   }
 
   @PostMapping("/account/{accountId}/Cheque/{chequeNumber}")
-  public Boolean updateChequeDetails(@PathVariable String chequeNumber, @PathVariable String accountId,
+  public void updateChequeDetails(@PathVariable String chequeNumber, @PathVariable String accountId,
       @RequestBody Cheque cheque) {
-    return chequeTrackerService.updateChequeDetails(chequeNumber, cheque);
+    chequeTrackerService.updateChequeDetails(chequeNumber, cheque);
   }
 
 

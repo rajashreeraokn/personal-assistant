@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -38,6 +39,12 @@ public class ChequeTrackerController {
       @RequestBody Cheque cheque) {
     chequeTrackerService.updateChequeDetails(chequeNumber, cheque);
   }
+
+  @GetMapping("/account/{accountId}/Cheque/month")
+  public List<Cheque> getChequeIssuedForSelectedMonth(@RequestParam("month") int month, @PathVariable String accountId){
+    return chequeTrackerService.getChequeIssuedForSelectedMonth(month);
+  }
+
 
 
 }

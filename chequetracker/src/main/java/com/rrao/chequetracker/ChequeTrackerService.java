@@ -1,5 +1,7 @@
 package com.rrao.chequetracker;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,8 +19,8 @@ public class ChequeTrackerService {
     this.chequeMap.put(c.getChequeNumber(), c);
   }
 
-  public Map<String, Cheque> getChequeMap() {
-    return this.chequeMap;
+  public List<Cheque> getChequeList() {
+    return this.chequeMap.values().stream().collect(Collectors.toList());
   }
 
   public void updateChequeDetails(String chequeNumber, Cheque cheque) {
@@ -26,6 +28,18 @@ public class ChequeTrackerService {
   }
 
   public List<Cheque> getChequeIssuedForSelectedMonth(int month) {
-  return this.chequeMap.values().stream().filter(x -> x.getDate().getMonthValue()==month).collect(Collectors.toList());
+    return this.chequeMap.values().stream().filter(x -> x.getDate().getMonthValue() == month)
+        .collect(Collectors.toList());
+  }
+
+  public Cheque getChequeMap(String chequeNumber) {
+    return this.chequeMap.get(chequeNumber);
+  }
+
+  public BigDecimal getMinimumBalance(LocalDate date) {
+    List<BigDecimal> amountList = new ArrayList<>();
+    this.chequeMap.values().stream().filter(x -> x.getDate().equals(date))
+        .forEach(x -> amountList.add(x.getAmount()));
+    return amountList.stream().reduce(BigDecimal.ZERO, BigDecimal::add);
   }
 }

@@ -1,12 +1,9 @@
 package com.rrao.chequetracker;
 
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
-import javax.persistence.Entity;
 import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.stereotype.Component;
 
 @NoArgsConstructor
 public class Cheque {
@@ -16,10 +13,12 @@ public class Cheque {
   private String recipient;
   private String purpose;
   private LocalDate date;
+  private BigDecimal amount;
 
 
   public Cheque(String chequeNumber, String bankName, String recipient, String purpose,
-      LocalDate date) {
+      LocalDate date, BigDecimal amount) {
+    setAmount(amount);
     setChequeNumber(chequeNumber);
     setBankName(bankName);
     setRecipient(recipient);
@@ -66,5 +65,13 @@ public class Cheque {
 
   public void setDate(LocalDate date) {
     this.date = date;
+  }
+
+  public BigDecimal getAmount() {
+    return amount;
+  }
+
+  public void setAmount(BigDecimal amount) {
+    this.amount = amount;
   }
 }

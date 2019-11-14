@@ -42,4 +42,8 @@ public class ChequeTrackerService {
         .forEach(x -> amountList.add(x.getAmount()));
     return amountList.stream().reduce(BigDecimal.ZERO, BigDecimal::add);
   }
+
+  public void deleteChequeDetails(String chequeNumber) {
+    this.chequeMap.remove(chequeNumber);
+  }
 }

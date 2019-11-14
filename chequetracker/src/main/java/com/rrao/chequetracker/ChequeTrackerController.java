@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -53,6 +54,10 @@ public class ChequeTrackerController {
     return chequeTrackerService.getMinimumBalance(LocalDate.parse(date));
   }
 
+  @DeleteMapping("/account/{accountId}/Cheque/{chequeNumber}")
+  public void deleteChequeDetails(@PathVariable String chequeNumber,@PathVariable String accountId ){
+    chequeTrackerService.deleteChequeDetails(chequeNumber);
+  }
 }
 
 

@@ -46,4 +46,8 @@ public class ChequeTrackerService {
   public void deleteChequeDetails(String chequeNumber) {
     this.chequeMap.remove(chequeNumber);
   }
+
+  public void updateChequeStatus(String chequeNumber, ChequeStatus chequeStatus) {
+    this.chequeMap.get(chequeNumber).setChequeStatus(chequeStatus);
+  }
 }

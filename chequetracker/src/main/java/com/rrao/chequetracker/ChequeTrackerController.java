@@ -58,6 +58,12 @@ public class ChequeTrackerController {
   public void deleteChequeDetails(@PathVariable String chequeNumber,@PathVariable String accountId ){
     chequeTrackerService.deleteChequeDetails(chequeNumber);
   }
+
+  @PostMapping("/account/{accountId}/Cheque/{chequeNumber}/ChequeStatus")
+      public void updateChequeStatus(@PathVariable String accountId,@PathVariable String chequeNumber,
+      @RequestBody ChequeStatus chequeStatus) {
+    chequeTrackerService.updateChequeStatus(chequeNumber, chequeStatus);
+  }
 }
 
 

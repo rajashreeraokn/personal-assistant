@@ -33,6 +33,9 @@ public class Cheque {
   }
 
   public void setChequeNumber(String chequeNumber) {
+    if(chequeNumber==null){
+      throw new IllegalArgumentException("chequeNumber is mandatory");
+    }
     this.chequeNumber = chequeNumber;
   }
 
@@ -41,6 +44,9 @@ public class Cheque {
   }
 
   public void setBankName(String bankName) {
+    if(bankName==null){
+      throw new IllegalArgumentException("amount is mandatory");
+    }
     this.bankName = bankName;
   }
 
@@ -49,6 +55,9 @@ public class Cheque {
   }
 
   public void setRecipient(String recipient) {
+    if(recipient==null){
+      throw new IllegalArgumentException("recipient is mandatory");
+    }
     this.recipient = recipient;
   }
 
@@ -57,6 +66,9 @@ public class Cheque {
   }
 
   public void setPurpose(String purpose) {
+    if(purpose==null){
+      throw new IllegalArgumentException("purpose is mandatory");
+    }
     this.purpose = purpose;
   }
 
@@ -65,6 +77,9 @@ public class Cheque {
   }
 
   public void setDate(LocalDate date) {
+    if(date==null){
+      throw new IllegalArgumentException("date is mandatory");
+    }
     this.date = date;
   }
 
@@ -73,6 +88,9 @@ public class Cheque {
   }
 
   public void setAmount(BigDecimal amount) {
+    if(amount==null){
+      throw new IllegalArgumentException("amount is mandatory");
+    }
     this.amount = amount;
   }
 

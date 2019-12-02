@@ -24,7 +24,11 @@ public class ChequeTrackerService {
   }
 
   public void updateChequeDetails(String chequeNumber, Cheque cheque) {
-    this.chequeMap.put(chequeNumber, cheque);
+    this.chequeMap.get(chequeNumber).setAmount(cheque.getAmount());
+    this.chequeMap.get(chequeNumber).setBankName(cheque.getBankName());
+    this.chequeMap.get(chequeNumber).setRecipient(cheque.getRecipient());
+    this.chequeMap.get(chequeNumber).setDate(cheque.getDate());
+    this.chequeMap.get(chequeNumber).setPurpose(cheque.getPurpose());
   }
 
   public List<Cheque> getChequeIssuedForSelectedMonth(int month) {

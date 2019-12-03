@@ -48,20 +48,27 @@ public class ChequeTrackerController {
 
   @GetMapping("/account/{accountId}/balance")
   public BigDecimal getMinimumBalance(@PathVariable String accountId,
-      @RequestParam("date") String date){
+      @RequestParam("date") String date) {
     return chequeTrackerService.getMinimumBalance(LocalDate.parse(date));
   }
 
   @DeleteMapping("/account/{accountId}/Cheque/{chequeNumber}")
-  public void deleteChequeDetails(@PathVariable String chequeNumber,@PathVariable String accountId ){
+  public void deleteChequeDetails(@PathVariable String chequeNumber,
+      @PathVariable String accountId) {
     chequeTrackerService.deleteChequeDetails(chequeNumber);
   }
 
-  @PostMapping("/account/{accountId}/Cheque/{chequeNumber}/ChequeStatus")
-      public void updateChequeStatus(@PathVariable String accountId,@PathVariable String chequeNumber,
-      @RequestBody ChequeStatus chequeStatus) {
-    chequeTrackerService.updateChequeStatus(chequeNumber, chequeStatus);
+  @PostMapping("/account")
+  public String addNewAccount(@RequestBody Account account) {
+    chequeTrackerService.addAccount(account);
+    return "account added";
   }
+
+  @GetMapping("/account")
+  public List<Account> getAccountDetails() {
+    return chequeTrackerService.getAccountList();
+  }
+
 }
 
 

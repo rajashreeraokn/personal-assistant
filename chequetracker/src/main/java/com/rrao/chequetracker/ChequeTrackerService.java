@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 public class ChequeTrackerService {
 
   private Map<String, Cheque> chequeMap = new HashMap();
+  private List<Account> accountList = new ArrayList();
 
   public void addCheque(Cheque c) {
     this.chequeMap.put(c.getChequeNumber(), c);
@@ -24,11 +25,6 @@ public class ChequeTrackerService {
   }
 
   public void updateChequeDetails(String chequeNumber, Cheque cheque) {
-    /*this.chequeMap.get(chequeNumber).setAmount(cheque.getAmount());
-    this.chequeMap.get(chequeNumber).setBankName(cheque.getBankName());
-    this.chequeMap.get(chequeNumber).setRecipient(cheque.getRecipient());
-    this.chequeMap.get(chequeNumber).setDate(cheque.getDate());
-    this.chequeMap.get(chequeNumber).setPurpose(cheque.getPurpose());*/
    Cheque c = this.chequeMap.get(chequeNumber);
    c.setRecipient(cheque.getRecipient());
    c.setPurpose(cheque.getPurpose());
@@ -36,7 +32,6 @@ public class ChequeTrackerService {
    c.setAmount(cheque.getAmount());
    c.setBankName(cheque.getBankName());
    this.chequeMap.put(chequeNumber,c);
-
   }
 
   public List<Cheque> getChequeIssuedForSelectedMonth(int month) {
@@ -59,7 +54,12 @@ public class ChequeTrackerService {
     this.chequeMap.remove(chequeNumber);
   }
 
-  public void updateChequeStatus(String chequeNumber, ChequeStatus chequeStatus) {
-    this.chequeMap.get(chequeNumber).setChequeStatus(chequeStatus);
+  public void addAccount(Account account) {
+    accountList.add(account);
   }
+
+  public List<Account> getAccountList() {
+    return this.accountList;
+  }
+
 }

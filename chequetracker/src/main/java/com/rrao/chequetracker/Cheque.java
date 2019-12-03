@@ -14,7 +14,6 @@ public class Cheque {
   private String purpose;
   private LocalDate date;
   private BigDecimal amount;
-  private ChequeStatus chequeStatus;
 
 
   public Cheque(String chequeNumber, String bankName, String recipient, String purpose,
@@ -94,11 +93,4 @@ public class Cheque {
     this.amount = amount;
   }
 
-  public ChequeStatus getChequeStatus() {
-    return chequeStatus;
-  }
-
-  public void setChequeStatus(ChequeStatus chequeStatus) {
-    this.chequeStatus = chequeStatus;
-  }
 }

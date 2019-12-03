@@ -11,7 +11,7 @@
 	<groupId>com.rrao</groupId>
 	<artifactId>chequetracker</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>chequetracker</name>
+	<accountName>chequetracker</accountName>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
